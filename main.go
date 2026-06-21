@@ -91,8 +91,9 @@ func main() {
 	srv := &http.Server{
 		Addr:    ":" + port,
 		Handler: router,
+		ReadHeaderTimeout: 5 * time.Second,
 	}
 
-	log.Printf("Serving on port: %s\n", port)
+	log.Printf("Serving on port: %s\n", strings.ReplaceAll(port, "\n", ""))
 	log.Fatal(srv.ListenAndServe())
 }
