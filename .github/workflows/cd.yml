@@ -3,9 +3,9 @@ on:
     branches: [main]
 
 jobs:
-  name: Deploy
-
-  steps:
+  deploy:
+  
+    steps:
     - name: Check out code
       uses: action/checkout@v4
     
