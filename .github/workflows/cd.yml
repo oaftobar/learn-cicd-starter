@@ -4,14 +4,14 @@ on:
 
 jobs:
   deploy:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
   
     steps:
       - name: Check out code
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
     
       - name: Set up Go
-        uses: action/setup-go@v5
+        uses: actions/setup-go@v5
 
       - name: Build the app
-        uses: .scripts/buildprod.sh
+        run: ./scripts/buildprod.sh
